@@ -9,6 +9,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background-color: $bg-color;
+    font-weight: 100;
 }
 
 a {
@@ -19,7 +20,59 @@ a {
   box-sizing: border-box;
 }
 
-.container-md	{
+.main-container{
+    width: 375px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    p{
+        padding: 10px;
+        font-size: 130%;
+        display: block;
+        margin-bottom: 0;
+        font-weight: 400;
 
-    background-color: #000;
+    }
+}
+
+
+.input-bar__box{
+    height: 40px;
+    padding: 8px;
+    background-color: rgb(240, 236, 236);
+    vertical-align: middle;
+    input{
+        opacity: 0.8;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        background-color: rgb(221, 218, 218);;
+        border-radius: 5px;;
+    }
+
+}
+
+
+.apps-recommend__box{
+    height: 150px;
+    float: left;
+    img{
+        width: 90px;
+        border-radius: 20px;
+    }
+
+    ul{
+        list-style: none;
+        padding-inline-start: 0;
+        li{
+            width: 100%;
+            text-align: left;
+
+            &:first-child{
+                font-weight: 300;
+            }
+        }
+    }
+
 }
