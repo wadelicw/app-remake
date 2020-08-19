@@ -27,7 +27,7 @@ app.get("/api/apps/top10_grossing", async (req, res) => {
     const response = await axios.get("https://rss.itunes.apple.com/api/v1/hk/ios-apps/top-grossing/all/10/explicit.json")
     res.send(response.data);
 })
-ß
+
 app.listen(port, () => {
     console.log("Example app listening at port 3200");
 })

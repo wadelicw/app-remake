@@ -41,7 +41,7 @@ class Home extends React.Component {
 				Loading: false,
 				error: true
 			});
-		}	
+		}
 	}
 
 	inputChangeHandler(event) {
