@@ -16,7 +16,6 @@ const AppsTop100 = props => {
                         rating={props.rating}
                         starRatedColor="orange"
                         numberOfStars={5}
-                        name={props.number}
                         starDimension="10px"
                         starSpacing="1px"
                     />

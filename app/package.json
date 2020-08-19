@@ -12,7 +12,9 @@
     "bootstrap": "^4.5.2",
     "next": "9.5.2",
     "react": "16.13.1",
+    "react-decoration": "^2.1.0",
     "react-dom": "16.13.1",
+    "react-loadingg": "^1.7.2",
     "react-star-ratings": "^2.3.0",
     "sass": "^1.26.10"
   }
