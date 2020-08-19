@@ -1,67 +1,60 @@
+//  From node_modules
 import Head from "next/head";
 import React from "react";
-import { BoxLoading } from 'react-loadingg';
-import api from "../api/index.js"
-import AppsTop100 from "../components/Apps-top100/index.js"
-import AppsRecommend from "../components/Apps-recommend/index.js"
-
+import { BoxLoading } from "react-loadingg";
+// From Components
+import api from "../api/index.js";
+import AppsTop100 from "../components/AppsTop100/index.js";
+import AppsRecommend from "../components/AppsRecommend/index.js";
 
 class Home extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isLoading: true,
+			Loading: true,
 			loaded: false,
 			error: false,
 			topApps: [],
 			grossingApps: [],
 			input: ""
 		}
-
 		this.inputChangeHandler = this.inputChangeHandler.bind(this);
-
+		this.getData = this.getData.bind(this);
 	}
 
-	async componentDidMount() {
+	componentDidMount() {
+		this.getData();
+	}
+
+	async getData() {
 		try {
-
 			const [topAppsData, grossingAppsData] = await Promise.all([api.getTopApps(), api.getGrossingApps()]);
-
 			this.setState({
-				isLoading: false,
+				Loading: false,
 				loaded: true,
 				topApps: topAppsData.feed.results,
 				grossingApps: grossingAppsData.feed.results
 			});
-
-
-		} catch (e) {
-			console.error(e);
+		} catch (error) {
+			console.error(error);
 			this.setState({
-				isLoading: false,
+				Loading: false,
 				error: true
 			});
-		}
-
+		}	
 	}
 
 	inputChangeHandler(event) {
 		this.setState({ input: event.target.value });
 	}
 
-
 	render() {
-
-		let { isLoading, loaded, error, topApps, grossingApps, input } = this.state;
-
+		let { Loading, loaded, error, topApps, grossingApps, input } = this.state;
 		if (input.trim() != "") {
 			var pattern = new RegExp(input)
-
 			topApps = topApps.filter(item => {
 				return (item.name.toLowerCase()).match(pattern);
 			});
-			
-
 			grossingApps = grossingApps.filter(item => {
 				return (item.name.toLowerCase()).match(pattern);
 			});
@@ -75,11 +68,11 @@ class Home extends React.Component {
 				</Head>
 
 				{
-					isLoading && <BoxLoading />
+					Loading && <BoxLoading />
 				}
 
-
 				<main className="main-container">
+
 					<div className="input-bar__box">
 						<input
 							type="text"
@@ -87,14 +80,12 @@ class Home extends React.Component {
 							value={this.state.input}
 							onChange={this.inputChangeHandler}
 						/>
-						{console.log(this.state.input)}
 					</div>
 
 					<div className="scroll-horizontal">
 						{
 							loaded && <p>推介</p>
 						}
-
 						{
 							grossingApps.map((cur, index) => {
 								return (
@@ -110,7 +101,6 @@ class Home extends React.Component {
 					</div>
 
 					<div className="scroll-vertical">
-
 						{
 							topApps.map((cur, index) => {
 								return (
@@ -126,15 +116,11 @@ class Home extends React.Component {
 								)
 							})
 						}
-
-
 					</div>
-
 				</main>
 			</div>
 		)
 	}
-
 }
 
 export default Home;

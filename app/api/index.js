@@ -10,5 +10,4 @@ const getGrossingApps = async () => {
     return response.data;
 }
 
-
-export default {getTopApps, getGrossingApps};
+export default { getTopApps, getGrossingApps };

@@ -9,6 +9,8 @@
  - [Documents](https://nextjs.org/docs/advanced-features/custom-document)
  - [Bootstrap](https://www.w3schools.com/bootstrap)
  - [ES2020](https://www.freecodecamp.org/news/javascript-new-features-es2020)
+
  - [SQL](https://www.w3schools.com/sql)
- - [Css even and odd](https://www.w3.org/Style/Examples/007/evenodd.zh_HK.html)
+ - [CS position]
+ - [ken's repo]
  

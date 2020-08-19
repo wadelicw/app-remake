@@ -1,7 +1,6 @@
 @import "bootstrap";
 @import "./variables.scss";
 
-
 html,
 body {
     padding: 0;
@@ -31,13 +30,8 @@ a {
         display: block;
         margin-bottom: 0;
         font-weight: 400;
-
     }
-
 }
-
-
-
 
 .input-bar__box{
     height: 40px;
@@ -53,17 +47,13 @@ a {
         background-color: rgba(221, 218, 218, 0.452);;
         border-radius: 5px;;
     }
-
 }
-
-
 
 .scroll-horizontal{
     overflow: auto;
     white-space: nowrap;
     height: 100%;
     border-top: 2px solid rgba(206, 204, 204, 0.74);
-
 }
 
 .apps-recommend__box{
@@ -72,7 +62,6 @@ a {
     width: 31%;
     vertical-align: top;
 
-    
     img{
         text-align: center;
         width: 90px;
@@ -98,20 +87,17 @@ a {
     }
 }
 
-
-
 .scroll-vertical{
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    height: 530px;
+    height: calc(100vh - 300px);
 }
 
 .apps-top100__box{
     display: block;
     border-top: 2px solid rgba(206, 204, 204, 0.74);
     padding-top: 5px;
-
 
     p{
         float: left;
@@ -134,8 +120,6 @@ a {
         }
     }
 
-    
-
     ul{
         list-style: none;
         padding-inline-start: 0;
@@ -144,7 +128,6 @@ a {
         margin-left: 120pX;
         margin-bottom: 5px;
 
-        
         li{
             width: 90%;
             text-align: left;
@@ -169,8 +152,6 @@ a {
                 position: relative;
                 top: -5px;
             }
-
         }
     }
-
 }
