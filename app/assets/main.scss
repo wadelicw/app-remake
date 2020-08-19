@@ -99,6 +99,14 @@ a {
 }
 
 
+
+.scroll-vertical{
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 530px;
+}
+
 .apps-top100__box{
     display: block;
     border-top: 2px solid rgba(206, 204, 204, 0.74);
@@ -147,6 +155,21 @@ a {
                 font-size: 90%;
                 font-weight: 300;
             }
+
+            &:nth-child(3){
+                float: left;
+                width: 25%;
+            }
+
+            &:last-child{
+                display: inline-block;
+                font-size: 55%;
+                font-weight: 200;
+                width: 75%;
+                position: relative;
+                top: -5px;
+            }
+
         }
     }
 

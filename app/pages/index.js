@@ -78,7 +78,7 @@ class Home extends React.Component {
 						}
 					</div>
 
-					<div>
+					<div className="scroll-vertical"> 
 						{
 							isLoading && <div> Loading ... </div> 
 						}
