@@ -2,6 +2,7 @@ import Head from "next/head";
 import React from "react";
 
 import api from "../api/index.js"
+import AppsTop100 from "../components/Apps-top100/index.js"
 import AppsRecommend from "../components/Apps-recommend/index.js"
 
 
@@ -26,11 +27,10 @@ class Home extends React.Component {
 			this.setState({
 				isLoading: false,
 				loaded: true,
-				topApps: topAppsData,
-				grossingApps: grossingAppsData
+				topApps: topAppsData.feed.results,
+				grossingApps: grossingAppsData.feed.results
 			});
 
-			console.log(this.state.topApps);
 
 		} catch (e) {
 			console.error(e);
@@ -45,7 +45,7 @@ class Home extends React.Component {
 
 	render() {
 
-		let {loading, loaded, err, topApp, topGross, input} = this.state;
+		let { isLoading, loaded, error, topApps, grossingApps, input } = this.state;
 
 		return (
 			<div>
@@ -59,19 +59,48 @@ class Home extends React.Component {
 						<input type="text" placeholder="&#x1F50D; 搜尋" />
 					</div>
 
+					<div className="scroll-horizontal">
+						{
+							isLoading ? <div> Loading ... </div> : <p>推介</p>
+						}
+
+						{
+							grossingApps.map((cur, index) => {
+								return (
+									<AppsRecommend
+										key={index}
+										icon={cur.artworkUrl100}
+										name={cur.name}
+										genre={cur.genres[0].name}
+									/>
+								)
+							})
+						}
+					</div>
+
 					<div>
 						{
-							loading && <div> Loading ... </div>
+							isLoading && <div> Loading ... </div> 
 						}
-						{
-							loaded && console.log(topApp)
+
+{
+							topApps.map((cur, index) => {
+								return (
+									<AppsTop100
+										key={index}
+										number={index+1}
+										icon={cur.artworkUrl100}
+										name={cur.name}
+										genre={cur.genres[0].name}
+										rating={cur.rating.usersRating}
+										counts={cur.rating.countOfRating}
+									/>
+								)
+							})
 						}
-						<p>推介</p>
 
-
-								<AppsRecommend />
-
-							</div>
+						
+					</div>
 
 				</main>
 			</div>
