@@ -71,7 +71,7 @@ class Home extends React.Component {
 					Loading && <BoxLoading />
 				}
 
-				<main className="main-container">
+				<main className="main-container ">
 
 					<div className="input-bar__box">
 						<input
